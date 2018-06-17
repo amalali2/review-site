@@ -18,5 +18,11 @@ public class ReviewsInventoryController {
 		return "reviews";
 	}
 	
+	@RequestMapping("/review")
+	public String getOneReview(@PathVariable(value = "id") Long id, Model model) {
+		model.addAttribute("reviews", reviewRepo.findById(id));
+		return "review";
+	}
+	
 
 }

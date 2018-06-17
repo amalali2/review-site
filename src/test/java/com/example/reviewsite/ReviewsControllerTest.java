@@ -31,9 +31,55 @@ public class ReviewsControllerTest {
 	Review review;
 	
 	@Test
-	public void getReviewsShouldReturnReviewsView () throws Exception {
+	
+		public void getReviewsShouldReturnReviewsView () throws Exception {
+		
 		mvc.perform(get("/reviews")).andExpect(view().name(is(equalTo("reviews"))));
+	
+	}
+	
+	@Test
+	
+		public void getReviewsShouldBeOk () throws Exception {
+		
+		mvc.perform(get("/reviews")).andExpect(status().is2xxSuccessful());
+	}
+	
+	@Test
+	
+		public void getReviewsShouldReturnAllProducts() throws Exception {
+		
+		mvc.perform(get("/reviews")).andExpect(model().attribute("reviews", is(repo.findAll())));
 		
 	}
+	
+//	@Test
+//	
+//		public void getReviewShouldReturnView() throws Exception {
+//		
+//		mvc.perform(get("/reviews?id=1")).andExpect(view().name(is(equalTo("review"))));
+//	
+//	}
+	
+	@Test
+	
+		public void getReviewShouldBeOk() throws Exception {
+		
+		mvc.perform(get("/reviews?id=1")).andExpect(status().is2xxSuccessful());
+		
+	}
+	
+	@Test
+	
+	public void getReviewsShouldReturnOneProduct() throws Exception {
+	
+		
+		mvc.perform(get("/reviews?id=1")).andExpect(model().attribute("review", is(repo.findById(42L))));
+		
+	}
+	
 
 }
+	
+	
+

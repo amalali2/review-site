@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reviews</title>
+</head>
+<body>
+	<h1>All Reviews</h1>
+
+	<ul>
+		<li th:each="review : ${reviews}">
+		
+        <a th:href="|@{/reviews/}${review.foodID}|"> 
+        <span th:text="${review.title}"></span>
+         </a>  
+			
+		</li>
+	</ul>
+</body>
+</html>

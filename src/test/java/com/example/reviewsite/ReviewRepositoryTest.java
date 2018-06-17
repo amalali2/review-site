@@ -15,7 +15,8 @@ public class ReviewRepositoryTest {
 	Review review = new Review( 1234L , "title", "imgUrl", "category", "content");
 	
 	@Test
-	public void shouldAddNewReviewToSiteRepo()	{
+	
+		public void shouldAddNewReviewToSiteRepo()	{
 		
 		int repoSizeBeforeAddition = testRepo.getReviewRepository().size();
 		testRepo.addReview(review);
@@ -35,16 +36,17 @@ public class ReviewRepositoryTest {
 	}
 	
 	@Test
+		
 		public void findAllShouldReturnAllValues () {
 			
-			Collection<Review> underTest = testRepo.findAll();
-			assertThat(underTest.size(), is(equalTo(3)));
+		Collection<Review> underTest = testRepo.findAll();
+		assertThat(underTest.size(), is(equalTo(3)));
 			
 	}
 	
 	@Test
 		
-	public void findOneShouldReturnOneReviewById () {
+		public void findOneShouldReturnOneReviewById () {
 			
 		Review underTest = testRepo.findById(1L);
 		assertThat(underTest.getTitle(), is(equalTo("Drips & Swirls")));
