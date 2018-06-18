@@ -7,12 +7,13 @@
 <body>
     <h1>A Review</h1>
 
-    <div th:each="review: ${reviews}">
-        <p th:text="${review.title}"></p>
-        <p th:text="${review.category}"></p>
-        <p th:text="${review.content}"></p>
-        <img th:src="@{${review.imgUrl}}" />
-
-    </div>
+    <section th:each="review : ${reviews}">
+    
+    	<h2 th:text = "${review.title}" ></h2>
+    	<p th:text = "'Category: ' + review.category}"></p>
+    	<p th:text = "${review.content}"></p>
+    	    	
+    </section>
+    	
 </body>
 </html>

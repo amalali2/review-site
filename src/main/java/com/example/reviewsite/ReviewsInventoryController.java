@@ -1,15 +1,19 @@
 package com.example.reviewsite;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
 
 @Controller	
 public class ReviewsInventoryController {
 	
-	@Autowired
+	@Resource
 	ReviewRepositorySite reviewRepo;
 	
 	@RequestMapping ("/reviews")
@@ -19,7 +23,7 @@ public class ReviewsInventoryController {
 	}
 	
 	@RequestMapping("/review")
-	public String getOneReview(@PathVariable(value = "id") Long id, Model model) {
+	public String getOneReview(@RequestParam(value = "id") Long id, Model model) {
 		model.addAttribute("reviews", reviewRepo.findById(id));
 		return "review";
 	}
