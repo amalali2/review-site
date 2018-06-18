@@ -53,13 +53,7 @@ public class ReviewsControllerTest {
 		
 	}
 	
-//	@Test
-//	
-//		public void getReviewShouldReturnView() throws Exception {
-//		
-//		mvc.perform(get("/reviews?id=1")).andExpect(view().name(is(equalTo("review"))));
-//	
-//	}
+
 	
 	@Test
 	

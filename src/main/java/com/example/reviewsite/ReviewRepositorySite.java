@@ -17,23 +17,34 @@ public class ReviewRepositorySite {
 	}
 
 	public ReviewRepositorySite() {
-//		Review reviewOne = new Review( 1L, "Drips & Swirls", "url", "Desserts", "");
-//		Review reviewTwo = new Review( 2L, "Lavash", "url", "Medditeraen", "");
-//		Review reviewThree = new Review( 3L, "Minga", "url", "Korean", "");
+
 		
-		Review dumplings = new Review(1L, "Mandu Palace", "im/dumplings.jpg", "Asian Cuisine","This place was hoppin at the lunch hour! A few people looked like they were on lunch break from work, but most people seemed like they were trying it for the first time. I saw families, young adults, older folks. It definitely attracts all kinds of people!");
+		Review dumplings = new Review(1L, "Mandu Palace", "/img/dumplings.jpg", "Asian Cuisine",
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+				+ "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure "
+				+ "dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non "
+				+ "proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
 				reviewRepository.put(1L, dumplings);
 		
-		Review pasta = new Review(2L, "Pastaria", "img/pasta.jpg", "Italian Cuisine", "This place has the best lunch special in town.  Pay only $6.95 for an entree, eggroll, bowl of soup, and a drink for lunch.  This deal is one of the few that is valid 7 days a week!  Of course, the more authentic (and tastier) dishes are on the dinner menu for a few more dollars, but this is a definite go-to!  The Pad Thai comes with chicken, shrimp, or beef.  The chef makes his own chili sauce--definitely worth a try if you are a fan of spicy food.");
+		Review pasta = new Review(2L, "Pastaria", "/img/pasta.jpg", "Italian Cuisine", 
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+						+ "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure "
+						+ "dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non "
+						+ "proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
 				reviewRepository.put(2L, pasta);
 		
-		Review cafe = new Review(3L, "Red Velvet Cafe", "img/cafe.jpg", "Cafe", "Spaghetti Warehouse is the best value Italian in Columbus.  The 15 Layer Lasagna gets you a great bang for your buck.  I've never finished an entire portion of this lasagna.  It is cheesy and saucy.  It is a great lasagna for the price and you don't have to clean the lasagna pan.");
+		Review cafe = new Review(3L, "Red Velvet Cafe", "/img/cafe.jpg", "Cafe", 
+				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+						+ "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure "
+						+ "dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non "
+						+ "proident, sunt in culpa qui officia deserunt mollit anim id est laborum");
 				reviewRepository.put(3L, cafe);
+				
+				this.addReview(cafe);
+				this.addReview(pasta);
+				this.addReview(dumplings);
+
 		
-		
-		reviewRepository.put(cafe.getFoodID(), cafe);
-		reviewRepository.put(pasta.getFoodID(), pasta);
-		reviewRepository.put(dumplings.getFoodID(), dumplings);
 	
 	}
 
